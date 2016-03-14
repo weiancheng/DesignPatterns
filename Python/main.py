@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
+from Python.DesignPattern import facade
+
 
 def main():
-    pass
+    facade.test_facade()
 
 
 if __name__ == '__main__':

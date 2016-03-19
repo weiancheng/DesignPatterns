@@ -36,6 +36,14 @@ public:
     virtual void exe(const char *cmd);
 };
 
+class Windows : public OperatingSystem
+{
+public:
+    virtual void get_version(void);
+    virtual void set_socket(const char *ip, const int port);
+    virtual void exe(const char *cmd);
+};
+
 void Linux::get_version()
 {
     cout << "Linux 3.2.1" << endl;
@@ -72,10 +80,51 @@ void Android::exe(const char *cmd)
     cout << "Android command: " << mCmd << endl;
 }
 
+void Windows::get_version()
+{
+    cout << "This is Windows10" << endl;
+}
+
+void Windows::set_socket(const char *ip, const int port)
+{
+    memcpy(mIP, ip, 30);
+    mPort = port;
+    cout << "Windows: ( " << mIP << " , " << mPort << " )" << endl;
+}
+
+void Windows::exe(const char *cmd)
+{
+    memcpy(mCmd, cmd, 80);
+    cout << "Windows cmd: \"" << mCmd << "\"" << endl;
+}
+
+class OSFactory
+{
+public:
+    static OperatingSystem *selectOS(const char type);
+};
+
+OperatingSystem * OSFactory::selectOS(const char type)
+{
+    OperatingSystem *os = NULL;
+    
+    if(type == 'l')
+        os = new Linux();
+    else if(type == 'a')
+        os = new Android();
+    else if(type == 'w')
+        os= new Windows();
+    else
+        os = NULL;
+
+    return os;
+}
+
+
 int main(int argc, char **argv)
 {
-    OperatingSystem *os = new Android();
-
+    OperatingSystem *os = OSFactory::selectOS('w');
+    
     os->get_version();
     os->set_socket("192.168.0.1", 1111);
     os->exe("/bin/ls");

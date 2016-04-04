@@ -5,3 +5,4 @@ This is my practiced project for design patterns.
 #3. Template Pattern
 #4. Command Pattern
 #5. Decorator Pattern
+#6. Proxy Pattern

@@ -6,7 +6,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(FACADE_SRC_FILE Facade.cpp)
 add_executable(facade ${FACADE_SRC_FILE})
 
-set(COMMAND_SRC_FILE Command.cpp Proxy.cpp)
+set(COMPOSITE_SRC_FILE Composite.cpp)
+add_executable(composite ${COMPOSITE_SRC_FILE})
+
+set(COMMAND_SRC_FILE Command.cpp)
 add_executable(command ${COMMAND_SRC_FILE})
 
 set(DECORATOR_SRC_FILE Decorator.cpp)

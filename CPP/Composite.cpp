@@ -1,80 +1,153 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
-class IFile {
+// Interface
+class IFile 
+{
 public:
-    virtual void Add(IFile file) {
-        cout << "no support Add()" << endl;
+    IFile(void) {}
+    virtual ~IFile(void) {}
+
+    virtual void Print(const int depth = 0) = 0;
+
+    virtual void Add(IFile * file)
+    {
+        std::cout << "no support Add() !!!" << std::endl;
     }
 
-    virtual void Remove(string name) {
-        cout << "no support Remove()" << endl;
+    virtual void Remove(std::string name)
+    {
+        std::cout << "no support Remove() !!!" << std::endl;
     }
 
-    virtual void Print(int depth) = 0;
+    virtual std::string Name(void)
+    {
+        return mName;
+    }
 
 protected:
-    string mFileName;
+    std::string mName;
 };
 
-class File : public IFile {
+// Composite
+class File : public IFile
+{
 public:
-    File(string name) {
-        mFileName = name;
+    File(std::string name)
+    {
+        mName = name;
     }
 
-    virtual void Add(IFile file) {
+    ~File(void) {}
+
+    void Add(IFile *file)
+    {
         mFiles.push_back(file);
     }
 
-    virtual void Remove(string name) {
-        vector<IFile>::iterator it_file;
-
-        for(it_file = mFiles.begin() ; it_file != mFiles.end() ; it_file++) {
-            if(it_file->mFileName == name) {
-                mFiles.erase(it_file);
+    void Remove(std::string name)
+    {
+        for(int i = 0 ; i < mFiles.size() ; i++)
+        {
+            if(mFiles[i]->Name().compare(name) == 0)
+            {
+                mFiles.erase(mFiles.begin() + i);
+                break;
             }
         }
     }
 
-    virtual void Print(int depth) {
-        vector<IFile>::iterator it_file;
-        string dot = "-";
+    virtual void Print(const int depth)
+    {
+        std::string dot("-");
 
-        for(int i = 0 ; i < depth ; i++) {
-            dot = dot + "-";
+        for(int i = 0 ; i < depth ; i++)
+        {
+            dot += std::string("-");
         }
 
-        cout << dot << mFileName << endl;
+        std::cout << dot << mName << std::endl;
 
-        for(it_file = mFiles.begin() ; it_file != mFiles.end() ; it_file++) {
-            it_file->Print(depth+1);
+        for(int i = 0 ; i < mFiles.size() ; i++)
+        {
+            mFiles[i]->Print(depth + 1);
         }
     }
 
 private:
-    vector<IFile> mFiles;
+    std::vector<IFile *> mFiles;
 };
 
-class Leaf : public IFile {
+// Leaf
+class NodeFile : public IFile
+{
 public:
-    Leaf(string name) {
-        mFileName = name;
+    NodeFile(std::string name)
+    {
+        mName = name;
     }
 
-    virtual void Print(int depth) {
-        string dot = "-";
+    void Print(const int depth)
+    {
+        std::string dot("-");
 
-        for(int i = 0 ; i < depth ; i++) {
-            dot = dot + "-";
+        for(int i = 0 ; i < depth ; i++)
+        {
+            dot += std::string("-");
         }
 
-        cout << dot << mFileName << endl;
+        std::cout << dot << mName << std::endl;
     }
 };
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
+    IFile *root = new File(std::string("File System"));
+    
+    IFile *w = new File(std::string("Windows"));
+    IFile *l = new File(std::string("Linux"));
+    IFile *i = new File(std::string("MacOS"));
+
+    root->Add(w);
+    root->Add(l);
+    root->Add(i);
+
+    IFile *we = new File(std::string("EXE"));
+    IFile *wd = new File(std::string("DLL"));
+
+    w->Add(we);
+    w->Add(wd);
+
+    IFile *lb = new File(std::string("BIN"));
+    IFile *ls = new File(std::string("SO"));
+
+    l->Add(lb);
+    l->Add(ls);
+
+    IFile *il = new File(std::string("Library"));
+    IFile *it = new File(std::string("TXT"));
+
+    i->Add(il);
+    i->Add(it);
+
+    root->Print();
+    std::cout << std::endl;
+    root->Remove(std::string("MacOS"));
+    root->Print();
+
+    std::cout << std::endl;
+    i->Print();
+
+    delete we;
+    delete wd;
+    delete lb;
+    delete ls;
+    delete il;
+    delete it;
+    delete w;
+    delete l;
+    delete i;
+    delete root;
+    
     return 0;
 }

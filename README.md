@@ -8,4 +8,4 @@ This is my practiced project for design patterns.
 6. Proxy Pattern
 7. Composite Pattern
 8. Adapter Pattern
-
+9. Builder Pattern

@@ -14,6 +14,8 @@ public:
     virtual void setBufferSize(int buf_size) = 0;
     virtual void create_socket(string ip) = 0;
     virtual void connection(void) = 0;
+
+    virtual ~IFileServer() {}
 };
 
 class FileServer : public IFileServer {
@@ -104,7 +106,7 @@ public:
         file_server->setBufferSize(1024);
     }
 
-    // distructor
+    // destructor
     ~FileServerProxy() {
         if(file_server)
             delete(file_server);

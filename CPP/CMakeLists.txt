@@ -12,6 +12,9 @@ add_executable(bridge ${BRIDGE_SRC_FILE})
 set(BUILDER_SRC_FILE Builder.cpp)
 add_executable(builder ${BUILDER_SRC_FILE})
 
+set(COF_SRC_FILE ChainofResponsibility.cpp)
+add_executable(cof ${COF_SRC_FILE})
+
 set(FACADE_SRC_FILE Facade.cpp)
 add_executable(facade ${FACADE_SRC_FILE})
 

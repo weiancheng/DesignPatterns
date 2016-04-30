@@ -10,3 +10,4 @@ This is my practiced project for design patterns.
 8. Adapter Pattern
 9. Builder Pattern
 10. Bridge Pattern
+11. Chain of Responsibility Pattern

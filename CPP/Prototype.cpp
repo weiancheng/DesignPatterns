@@ -37,7 +37,7 @@ public:
     }
 
     virtual void showDetail(void) {
-        std::cout << "Book Type: Novel" << std::endl;
+        std::cout << "Book Type: Magazine" << std::endl;
         std::cout << "Book Name: " << mName << std::endl;
         std::cout << "Book Page: " << mPages << std::endl;
         std::cout << "Book Language: ";
@@ -66,6 +66,16 @@ public:
         book->setLanguage(this->mLanguage);
 
         return book;
+    }
+
+    Magazine operator=(const Magazine &m) {
+        Magazine new_m;
+
+        new_m.setName(this->mName);
+        new_m.setPages(this->mPages);
+        new_m.setLanguage(this->mLanguage);
+
+        return new_m;
     }
 };
 
@@ -131,6 +141,28 @@ int main(int argc, char **argv) {
 
     delete(HarryPotter);
     delete(HarryBatter);
+
+    std::cout << std::endl;
+    Book * science = new Magazine();
+    Book * new_science = new Magazine();
+    science->setName("Science");
+    science->setPages(50);
+    science->setLanguage(EENGLISH);
+
+    std::string aa("aaaa");
+    std::string bb("bbbb");
+
+    aa = bb;
+
+    aa = "ggg";
+
+    std::cout << "aa: " << &aa << " " << aa << std::endl;
+    std::cout << "bb: " << &bb << " " << bb << std::endl;
+
+    new_science = science;
+    new_science->showDetail();
+
+    delete science;
 
     return 0;
 }

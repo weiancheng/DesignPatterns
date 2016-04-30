@@ -6,6 +6,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(ADAPTER_SRC_FILE Adapter.cpp)
 add_executable(adapter ${ADAPTER_SRC_FILE})
 
+set(BRIDGE_SRC_FILE Bridge.cpp)
+add_executable(bridge ${BRIDGE_SRC_FILE})
+
 set(BUILDER_SRC_FILE Builder.cpp)
 add_executable(builder ${BUILDER_SRC_FILE})
 

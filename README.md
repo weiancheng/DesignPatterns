@@ -9,3 +9,4 @@ This is my practiced project for design patterns.
 7. Composite Pattern
 8. Adapter Pattern
 9. Builder Pattern
+10. Bridge Pattern

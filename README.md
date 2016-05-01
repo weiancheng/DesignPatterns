@@ -11,3 +11,4 @@ This is my practiced project for design patterns.
 9. Builder Pattern
 10. Bridge Pattern
 11. Chain of Responsibility Pattern
+12. Mediator Pattern

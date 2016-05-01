@@ -30,6 +30,9 @@ add_executable(decorator ${DECORATOR_SRC_FILE})
 set(FACTORY_SRC_FILE factory.cpp)
 add_executable(factory ${FACTORY_SRC_FILE})
 
+set(MEDIATOR_SRC_FILE Mediator.cpp)
+add_executable(mediator ${MEDIATOR_SRC_FILE})
+
 set(STRATEGY_SRC_FILE Strategy.cpp)
 add_executable(strategy ${STRATEGY_SRC_FILE})
 

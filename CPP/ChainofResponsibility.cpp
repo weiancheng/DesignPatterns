@@ -11,7 +11,7 @@ public:
             delete mHero;
     }
 
-    virtual void getHeror(JusticeLeague *hero) {
+    virtual void getHero(JusticeLeague *hero) {
         mHero = hero;
     }
 
@@ -78,8 +78,8 @@ int main(int argc, char **argv) {
     JusticeLeague *flash = new TheFlash("The Flash", 800);
     JusticeLeague *super_man = new Superman("Super man", 1200);
 
-    batman->getHeror(flash);
-    flash->getHeror(super_man);
+    batman->getHero(flash);
+    flash->getHero(super_man);
 
     int enemy = 2000;
 

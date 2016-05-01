@@ -96,7 +96,7 @@ public:
     }
 };
 
-class Terrorist : Character {
+class Terrorist : public Character {
 public:
     virtual void Attack(void) {
         mWeapon->useAttack(mAttack);

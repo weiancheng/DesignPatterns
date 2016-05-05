@@ -27,7 +27,7 @@ add_executable(command ${COMMAND_SRC_FILE})
 set(DECORATOR_SRC_FILE Decorator.cpp)
 add_executable(decorator ${DECORATOR_SRC_FILE})
 
-set(FACTORY_SRC_FILE factory.cpp)
+set(FACTORY_SRC_FILE Factory.cpp)
 add_executable(factory ${FACTORY_SRC_FILE})
 
 set(MEDIATOR_SRC_FILE Mediator.cpp)

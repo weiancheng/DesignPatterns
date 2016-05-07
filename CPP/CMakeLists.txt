@@ -50,3 +50,6 @@ add_executable(proxy ${PROXY_SRC_FILE})
 
 set(SIMPLE_FACTORY_SRC_FILE SimpleFactory.cpp)
 add_executable(simple_factory ${SIMPLE_FACTORY_SRC_FILE})
+
+set(STATE_SRC_FILE State.cpp)
+add_executable(state ${STATE_SRC_FILE})

@@ -14,3 +14,4 @@ This is my practiced project for design patterns.
 12. Mediator Pattern
 13. Flyweight Pattern
 14. State Pattern
+15. Simple Factory Pattern

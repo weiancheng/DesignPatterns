@@ -3,6 +3,9 @@ project(DesignPatterns)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+set(ABSTRACT_FACTORY_SRC_FILE AbstractFactory.cpp)
+add_executable(abstract_factory ${ABSTRACT_FACTORY_SRC_FILE})
+
 set(ADAPTER_SRC_FILE Adapter.cpp)
 add_executable(adapter ${ADAPTER_SRC_FILE})
 

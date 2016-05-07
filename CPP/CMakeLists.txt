@@ -30,6 +30,9 @@ add_executable(decorator ${DECORATOR_SRC_FILE})
 set(FACTORY_SRC_FILE Factory.cpp)
 add_executable(factory ${FACTORY_SRC_FILE})
 
+set(FLYWEIGHT_SRC_FILE Flyweight.cpp)
+add_executable(flyweight ${FLYWEIGHT_SRC_FILE})
+
 set(MEDIATOR_SRC_FILE Mediator.cpp)
 add_executable(mediator ${MEDIATOR_SRC_FILE})
 
@@ -44,3 +47,6 @@ add_executable(prototype ${PROTOTYPE_SRC_FILE})
 
 set(PROXY_SRC_FILE Proxy.cpp)
 add_executable(proxy ${PROXY_SRC_FILE})
+
+set(SIMPLE_FACTORY_SRC_FILE SimpleFactory.cpp)
+add_executable(simple_factory ${SIMPLE_FACTORY_SRC_FILE})

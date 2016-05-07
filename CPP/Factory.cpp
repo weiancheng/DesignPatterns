@@ -77,26 +77,37 @@ public:
     }
 };
 
-class CarFactory {
+class IFactory {
 public:
-    CarFactory() {}
-    ~CarFactory() {}
+    IFactory() {}
+    virtual ~IFactory() {}
 
-    ICar * createCar(std::string name) {
-        ICar *car = nullptr;
-        if(name.compare("sport car") == 0) {
-            car = new SportCar("Mazda MX-5", 300);
-        } else if (name.compare("muscle car") == 0) {
-            car = new MuscleCar("Chevelle SS", 290);
-        }
+    virtual ICar * createCar(void) = 0;
+};
 
-        return car;
+class MuscleCarFactory : public IFactory {
+public:
+    MuscleCarFactory() {}
+    virtual ~MuscleCarFactory() {}
+
+    virtual ICar * createCar(void) {
+        return new MuscleCar("Chevelle SS", 290);
+    }
+};
+
+class SportCarFactory : public IFactory {
+public:
+    SportCarFactory() {}
+    ~SportCarFactory() {}
+
+    virtual ICar * createCar(void) {
+        return new SportCar("Mazda MX-5", 300);
     }
 };
 
 int main(int argc, char **argv) {
-    CarFactory car_factory;
-    ICar *sport_car = car_factory.createCar("sport car");
+    IFactory * car_factory = new SportCarFactory();
+    ICar *sport_car = car_factory->createCar();
 
     sport_car->forward(100);
     sport_car->left(50);

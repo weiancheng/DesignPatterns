@@ -39,6 +39,9 @@ add_executable(flyweight ${FLYWEIGHT_SRC_FILE})
 set(MEDIATOR_SRC_FILE Mediator.cpp)
 add_executable(mediator ${MEDIATOR_SRC_FILE})
 
+set(MEMENTO_SRC_FILE Memento.cpp)
+add_executable(memento ${MEMENTO_SRC_FILE})
+
 set(STRATEGY_SRC_FILE Strategy.cpp)
 add_executable(strategy ${STRATEGY_SRC_FILE})
 

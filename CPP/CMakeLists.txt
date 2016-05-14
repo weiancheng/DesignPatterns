@@ -59,3 +59,6 @@ add_executable(simple_factory ${SIMPLE_FACTORY_SRC_FILE})
 
 set(STATE_SRC_FILE State.cpp)
 add_executable(state ${STATE_SRC_FILE})
+
+set(VISITOR_SRC_FILE Visitor.cpp)
+add_executable(visitor ${VISITOR_SRC_FILE})

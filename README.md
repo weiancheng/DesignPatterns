@@ -19,3 +19,4 @@ This is my practiced project for design patterns.
 17. State Pattern
 18. Strategy Pattern
 19. Template Pattern
+20. Visitor Pattern

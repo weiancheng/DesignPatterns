@@ -9,8 +9,12 @@ public:
     INetwork(void) {}
     virtual ~INetwork() {}
 
-    virtual void sendMsg(VoiceMessage * voice) = 0;
-    virtual void sendMsg(TextMessage * text) = 0;
+    virtual void sendMsg(VoiceMessage * voice) {
+        std::cout << "not support" << std::endl;
+    }
+    virtual void sendMsg(TextMessage * text) {
+        std::cout << "not support" << std::endl;
+    }
 };
 
 class IMessage {
@@ -68,7 +72,7 @@ std::string VoiceMessage::getMsg(void) {
     return mMessage;
 }
 
-class LineNetwork {
+class LineNetwork : public INetwork {
 public:
     LineNetwork(void) {}
     ~LineNetwork() {}

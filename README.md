@@ -11,12 +11,13 @@ This is my practiced project for design patterns.
 9. Facade Pattern
 10. Factory Pattern
 11. Flyweight Pattern
-12. Mediator Pattern
-13. Memento Pattern
-14. Prototype Pattern
-15. Proxy Pattern
-16. Simple Factory Pattern
-17. State Pattern
-18. Strategy Pattern
-19. Template Pattern
-20. Visitor Pattern
+12. Interpreter Pattern
+13. Mediator Pattern
+14. Memento Pattern
+15. Prototype Pattern
+16. Proxy Pattern
+17. Simple Factory Pattern
+18. State Pattern
+19. Strategy Pattern
+20. Template Pattern
+21. Visitor Pattern

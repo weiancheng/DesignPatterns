@@ -57,6 +57,9 @@ add_executable(prototype ${PROTOTYPE_SRC_FILE})
 set(PROXY_SRC_FILE Proxy.cpp)
 add_executable(proxy ${PROXY_SRC_FILE})
 
+set(SINGLETON_SRC_FILE Singleton.cpp)
+add_executable(singleton ${SINGLETON_SRC_FILE})
+
 set(SIMPLE_FACTORY_SRC_FILE SimpleFactory.cpp)
 add_executable(simple_factory ${SIMPLE_FACTORY_SRC_FILE})
 

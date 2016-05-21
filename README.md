@@ -17,7 +17,8 @@ This is my practiced project for design patterns.
 15. Prototype Pattern
 16. Proxy Pattern
 17. Simple Factory Pattern
-18. State Pattern
-19. Strategy Pattern
-20. Template Pattern
-21. Visitor Pattern
+18. Singleton Pattern
+19. State Pattern
+20. Strategy Pattern
+21. Template Pattern
+22. Visitor Pattern

@@ -39,6 +39,9 @@ add_executable(flyweight ${FLYWEIGHT_SRC_FILE})
 set(INTERPRETER_SRC_FILE Interpreter.cpp)
 add_executable(interpreter ${INTERPRETER_SRC_FILE})
 
+set(ITERATOR_SRC_FILE Iterator.cpp)
+add_executable(iterator ${ITERATOR_SRC_FILE})
+
 set(MEDIATOR_SRC_FILE Mediator.cpp)
 add_executable(mediator ${MEDIATOR_SRC_FILE})
 

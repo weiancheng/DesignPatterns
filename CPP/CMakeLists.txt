@@ -51,6 +51,9 @@ add_executable(strategy ${STRATEGY_SRC_FILE})
 set(TEMPLATE_SRC_FILE Template.cpp)
 add_executable(template ${TEMPLATE_SRC_FILE})
 
+set(OBSERVER_SRC_FILE Observer.cpp)
+add_executable(observer ${OBSERVER_SRC_FILE})
+
 set(PROTOTYPE_SRC_FILE Prototype.cpp)
 add_executable(prototype ${PROTOTYPE_SRC_FILE})
 

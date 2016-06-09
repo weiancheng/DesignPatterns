@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+''' http://ot-note.logdown.com/posts/67571/-decorator-with-without-arguments-in-function-class-form '''
+
 from abc import abstractmethod
 
 
@@ -64,8 +66,9 @@ def turbo(func):
 
     return more_power
 
+
 @turbo
-def speed(speed = 1):
+def speed(speed=1):
     print("car speed: " + str(speed) + 'km/h')
 
 

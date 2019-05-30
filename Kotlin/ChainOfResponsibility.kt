@@ -6,6 +6,7 @@ class LoggerLevel() {
         val ERROR = 4
     }
 }
+
 abstract class LoggerHandler() {
     private var handler: LoggerHandler? = null
     public fun setHandler(handler: LoggerHandler?) {
@@ -14,6 +15,7 @@ abstract class LoggerHandler() {
     protected fun next(): LoggerHandler? = handler
     abstract fun message(level: Int, msg: String)
 }
+
 class Logger(): LoggerHandler() {
     override fun message(level: Int, msg: String) {
         super.next().let {
@@ -22,6 +24,7 @@ class Logger(): LoggerHandler() {
         }
     }
 }
+
 class Debug(): LoggerHandler() {
     override fun message(level: Int, msg: String) {
         if (level.equals(LoggerLevel.DEBUG)) {
@@ -35,6 +38,7 @@ class Debug(): LoggerHandler() {
         }
     }
 }
+
 class Warning(): LoggerHandler() {
     override fun message(level: Int, msg: String) {
         if (level.equals(LoggerLevel.WARNING)) {
@@ -47,6 +51,7 @@ class Warning(): LoggerHandler() {
         }
     }
 }
+
 class Info(): LoggerHandler() {
     override fun message(level: Int, msg: String) {
         if (level.equals(LoggerLevel.INFO)) {
@@ -59,6 +64,7 @@ class Info(): LoggerHandler() {
         }
     }
 }
+
 class Error(): LoggerHandler() {
     override fun message(level: Int, msg: String) {
         if (level.equals(LoggerLevel.ERROR)) {
@@ -71,6 +77,7 @@ class Error(): LoggerHandler() {
         }
     }
 }
+
 fun main() {
     println("This is Chain of Response")
     val logger = Logger()
